@@ -1,0 +1,23 @@
+{
+  "name": "newstack",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "laplandin"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.5",
+    "normalize-css": "normalize.css#^5.0.0",
+    "handlebars": "^4.0.5"
+  }
+}
