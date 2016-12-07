@@ -11,6 +11,13 @@ var  browserSync = require("browser-sync");
 var  rigger = require('gulp-rigger');
 var  reload = browserSync.reload;
 var  rimraf = require('rimraf');
+var mainBowerFiles = require('main-bower-files');
+var wiredep = require('wiredep').stream;
+
+gulp.task('bower', function() {
+  gulp.src(mainBowerFiles())
+    .pipe(gulp.dest(path.build.html));
+});
 
 var path = {
   build: {
@@ -53,6 +60,7 @@ var config = {
 gulp.task('html:build', function() {
   gulp.src(path.src.html) //выбор фалов по нужному пути
     .pipe(rigger())
+    .pipe(wiredep())
     .pipe(gulp.dest(path.build.html)) //папка назначения
     .pipe(reload({stream:true})); //Перезагрузка сервера
 });
