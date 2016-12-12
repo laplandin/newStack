@@ -137,4 +137,6 @@ gulp.task('clean', function(cb) {
   rimraf(path.clean, cb);
 });
 
+gulp.task('develop', ['webserver', 'watch']);
+
 gulp.task('default', ['build', 'webserver', 'watch']);
