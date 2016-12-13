@@ -1,0 +1,12 @@
+<script id="article-item-template" type="text/x-handlebars-template">
+    {{#each articles}}
+    <article class="article-index-item article-index-item--small col-lg-4">
+        <img src="{{src}}" alt="" class="aticle-index-item__poster">
+        <h3 class="article-index-item__title">{{title}}</h3>
+        <p class="article-index-item__description">{{description}}</p>
+        <a href="" class="article-index-item__more-info">Подробнее</a>
+        <a href="" class="article-index-item__comments"></a>
+        <a href="" class="article-index-item__share"></a>
+    </article>
+    {{/each}}
+</script>
