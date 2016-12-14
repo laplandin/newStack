@@ -13,6 +13,8 @@ var  reload = browserSync.reload;
 var  rimraf = require('rimraf');
 var mainBowerFiles = require('main-bower-files');
 var wiredep = require('wiredep').stream;
+var useref = require('gulp-useref');
+var plumber = require('gulp-plumber');
 
 gulp.task('bower', function() {
   gulp.src(mainBowerFiles())
@@ -61,6 +63,7 @@ gulp.task('html:build', function() {
   gulp.src(path.src.html) //выбор фалов по нужному пути
     .pipe(rigger())
     .pipe(wiredep())
+    .pipe(useref())
     .pipe(gulp.dest(path.build.html)) //папка назначения
     .pipe(reload({stream:true})); //Перезагрузка сервера
 });
@@ -77,6 +80,7 @@ gulp.task('js:build', function() {
 
 gulp.task('css:build', function() {
   gulp.src(path.src.css)
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus())
     .pipe(prefixer())
