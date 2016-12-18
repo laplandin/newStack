@@ -1,25 +1,38 @@
-.inside
-  justify-content space-between
-  //padding 0
+@media (min-width: 768px)
+  .inside
+    justify-content space-between
 
-.card
-  height 415px
-  flex-basis 32%
-  margin-bottom 32px
-  box-sizing border-box
+  .card
+    height 315px
+    flex-basis 49%
+    margin-bottom 3%
 
-.content__card--small
-  &:nth-of-type(5)
+  .content__card--last-line
+    flex-grow 1
+
+  //.content__card--small
+
+
+  //.content__card--wide
+  //  flex-basis 100%
+
+@media (min-width: 992px)
+  .card
+    height 415px
+    flex-basis 32%
+    box-sizing border-box
+
+  .content__card--small
+    &:nth-of-type(5)
+      margin-right 0
+
+
+  .content__card--wide
+    display flex
+    flex-direction row-reverse
+    justify-content space-between
+    flex-basis 66%
     margin-right 0
 
-
-.content__card--wide
-  display flex
-  flex-direction row-reverse
-  justify-content space-between
-  flex-basis 66%
-  margin-right 0
-
-  img
-    width 37.5%
-
+    img
+      width 37.5%

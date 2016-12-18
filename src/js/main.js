@@ -34,11 +34,18 @@ window.onload = function() {
                 src: 'img/img1'}]
         };
 
-        Handlebars.registerHelper("ifWide", function(index) {
+        Handlebars.registerHelper("ifWide", function(index, obj) {
             index = index +1;
+            
             if ((index == 2) || ((index - 2) % 5  == 0)) {
+                if (!(obj.length % 2 == 0)&& index == (obj.length)) {
+                    return "content__card--wide content__card--last-line";
+                }
                 return "content__card--wide";
             } else {
+                if (!(obj.length % 2 == 0) && index == (obj.length)) {
+                    return "content__card--small content__card--last-line";
+                }
                 return "content__card--small";
             }
         });
