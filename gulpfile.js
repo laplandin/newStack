@@ -15,6 +15,7 @@ var mainBowerFiles = require('main-bower-files');
 var wiredep = require('wiredep').stream;
 var useref = require('gulp-useref');
 var plumber = require('gulp-plumber');
+var sass = require('gulp-sass');
 
 gulp.task('bower', function() {
   gulp.src(mainBowerFiles())
@@ -43,10 +44,15 @@ var path = {
     html: 'src/**/*.html',
     js: 'src/js/**/*.js',
     css: 'src/style/**/*.styl',
+    scss: 'src/style/**/*.sass',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*'
   },
-  clean: './build'
+  clean: './build',
+  bootstrap: {
+    src: 'bower_components/bootstrap/scss/bootstrap-custom.scss',
+    dist: 'bower_components/bootstrap/dist/css'
+  }
 };
 
 var config = {
@@ -58,6 +64,12 @@ var config = {
   port: 9000,
   logPrefix: "Frontend_Devil"
 }; //Настройки нашего live-сервера
+
+gulp.task('boot:compile', () => {
+  gulp.src(path.bootstrap.src)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(path.bootstrap.dist));
+});
 
 gulp.task('html:build', function() {
   gulp.src(path.src.html) //выбор фалов по нужному пути
@@ -108,6 +120,7 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
+  'boot:compile',
   'html:build',
   'js:build',
   'css:build',
@@ -119,7 +132,8 @@ gulp.task('watch', function() {
   watch([path.watch.html], function(event, cb) {
     gulp.start('html:build');
   });
-  watch([path.watch.css], function(event, cb) {
+  watch([path.watch.css, path.watch.scss], function(event, cb) {
+    gulp.start('boot:compile');
     gulp.start('css:build');
   });
   watch([path.watch.js], function(event, cb) {
@@ -131,6 +145,9 @@ gulp.task('watch', function() {
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts:build');
   });
+  // watch([path.watch.scss], function(event, cb) {
+  //   gulp.start('');
+  // });
 });
 
 gulp.task('webserver', function() {
