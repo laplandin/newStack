@@ -1,13 +1,18 @@
 <div class="row flex-lg-middle flex-items-lg-between nav-wrapper">
-    <a class="navbar-brand col-md-2 col-lg-1" href="#">
-        <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="logo">
-    </a>
+    <!--<div class="logo-wrapper">-->
+        <a class="navbar-brand col-md-2 col-lg-1" href="#">
+            <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="logo">
+        </a>
+    <!--</div>-->
     <nav class="global-nav navbar navbar-dark bg-faded col-md-8 col-lg-6">
-        <div class="global-nav__items-list nav navbar-nav">
-            <a class="global-nav__item col-lg nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="global-nav__item col-lg nav-item nav-link" href="#">Features</a>
-            <a class="global-nav__item col-lg nav-item nav-link" href="#">Pricing</a>
-            <a class="global-nav__item col-lg nav-item nav-link" href="#">About</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse" id="exCollapsingNavbar">
+            <div class="global-nav__items-list nav navbar-nav ">
+                <a class="global-nav__item col-lg nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="global-nav__item col-lg nav-item nav-link" href="#">Features</a>
+                <a class="global-nav__item col-lg nav-item nav-link" href="#">Pricing</a>
+                <a class="global-nav__item col-lg nav-item nav-link" href="#">About</a>
+            </div>
         </div>
     </nav>
 </div>

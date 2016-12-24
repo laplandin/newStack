@@ -1,28 +1,60 @@
 .nav-wrapper
-  margin-bottom 32px
+  flex-direction row
+  margin-bottom 20px
 
 .global-nav
   background-color main-color
-  height 66px
-  padding 0
-
-  color #ffffff
+  text-align right
 
 .navbar-brand
-  margin-right auto
+  float none
+  width auto
+  display inline
+  margin 0 auto 20px
+
+.navbar-toggler
+  display inline-block
 
 .global-nav__items-list
-  display flex
-  color #ffffff
+  text-align left
+
+.navbar-nav .nav-item
+  height 50px
+  border-bottom 1px solid #8c8c8c
 
 .navbar-nav .nav-item+.nav-item
   margin 0
 
-.global-nav__items-list.navbar-nav .nav-link
-  padding-top 1.3rem
-  padding-bottom 1.3rem
-  text-align center
-  text-transform uppercase
+
+@media (min-width: 1200px)
+  .nav-wrapper
+    margin-bottom 32px
+
+  .global-nav
+    background-color main-color
+    height 66px
+    padding 0
+
+    color #ffffff
+
+  .navbar-brand
+    margin-right auto
+
+  .global-nav__items-list
+    display flex
+    color #ffffff
+
+  .navbar-nav .nav-item+.nav-item
+    margin 0
+
+  .global-nav__items-list.navbar-nav .nav-link
+    padding-top 1.3rem
+    padding-bottom 1.3rem
+    text-align center
+    text-transform uppercase
+
+
+
 
 
 
