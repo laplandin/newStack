@@ -1,9 +1,14 @@
-.container.no-padding
-  padding 0
+article.card
+  margin 0 -15px
+  border-radius 0
 
-.inside.row-eq-height > [class*='col-lg']
-  display flex
-  margin-bottom 30px
+@media (min-width: 1200px)
+  .container.no-padding
+    padding 0
 
-  article
-    flex-grow 1
+  .inside.row-eq-height > [class*='col-lg']
+    display flex
+    margin-bottom 30px
+
+    article
+      flex-grow 1
