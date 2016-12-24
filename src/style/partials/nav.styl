@@ -12,6 +12,9 @@
   display inline
   margin 0 auto 20px
 
+  @media (min-width: 768px)
+    margin 0
+
 .navbar-toggler
   display inline-block
 
@@ -21,12 +24,18 @@
 .navbar-nav .nav-item
   height 50px
   border-bottom 1px solid #8c8c8c
+    @media (min-width: 768px)
+      border none
 
 .navbar-nav .nav-item+.nav-item
   margin 0
 
+@media (min-width: 768px)
+  .nav-wrapper
+    flex-direction row
 
-@media (min-width: 1200px)
+
+//@media (min-width: 1200px)
   .nav-wrapper
     margin-bottom 32px
 
