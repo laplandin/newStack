@@ -1,86 +1,9 @@
-.inside
-  flex-direction column
+.container.no-padding
+  padding 0
 
-.card
-  position relative
+.inside.row-eq-height > [class*='col-lg']
   display flex
-  margin-bottom 0
-  min-height 150px
+  margin-bottom 30px
 
-  border-radius 0
-
-  img
-    width 30%
-
-  .card-block
-    flex-basis 70%
-    flex-grow 0
-
-    .btn
-      display none
-
-@media (min-width: 544px)
-  .card
+  article
     flex-grow 1
-    display flex
-    height 25%
-    margin-bottom 3%
-
-    img
-      flex-basis 25%
-
-    .card-block
-      flex-basis 75%
-
-      .btn
-        display block
-        width 100%
-
-@media (min-width: 768px)
-  .inside
-    flex-direction row
-    justify-content space-between
-
-  .card
-    display block
-    height 315px
-    flex-grow 0
-    flex-basis 49%
-    margin-bottom 3%
-
-    border-radius 4px
-
-    img
-      flex-basis auto
-      width 100%
-
-    .card-block .btn
-      display inline-block
-      width auto
-
-  .content__card--last-line
-    flex-grow 1
-
-@media (min-width: 992px)
-  .card
-    height 415px
-    flex-basis 32%
-    box-sizing border-box
-
-  .content__card--small
-    &:nth-of-type(5n)
-      margin-right 0
-
-
-  .content__card--wide
-    display flex
-    flex-direction row-reverse
-    justify-content space-between
-    flex-basis 66%
-    margin-right 0
-
-    img
-      width 37.5%
-
-  .content__card--last-line
-    flex-grow 0

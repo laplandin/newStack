@@ -16,6 +16,7 @@ var wiredep = require('wiredep').stream;
 var useref = require('gulp-useref');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
+var sequence = require('gulp-sequence');
 
 gulp.task('bower', function() {
   gulp.src(mainBowerFiles())
@@ -44,7 +45,7 @@ var path = {
     html: 'src/**/*.html',
     js: 'src/js/**/*.js',
     css: 'src/style/**/*.styl',
-    scss: 'src/style/**/*.sass',
+    scss: 'src/style/**/*.scss',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*'
   },
@@ -66,18 +67,23 @@ var config = {
 }; //Настройки нашего live-сервера
 
 gulp.task('boot:compile', () => {
-  gulp.src(path.bootstrap.src)
-    .pipe(sass().on('error', sass.logError))
+
+    gulp.src(path.bootstrap.src)
+    .pipe(plumber())
+    .pipe(sass())
     .pipe(gulp.dest(path.bootstrap.dist));
+    //.pipe(reload({stream:true}));
 });
 
 gulp.task('html:build', function() {
-  gulp.src(path.src.html) //выбор фалов по нужному пути
-    .pipe(rigger())
-    .pipe(wiredep())
-    .pipe(useref())
-    .pipe(gulp.dest(path.build.html)) //папка назначения
-    .pipe(reload({stream:true})); //Перезагрузка сервера
+  //  setTimeout(function() {
+      gulp.src(path.src.html) //выбор фалов по нужному пути
+      .pipe(rigger()) //вставляет код файла вместо указанного к файлу пути
+      .pipe(wiredep()) // устанавливает ссылки на зависимости bower и вставляет их в проект
+      .pipe(useref()) // собирает сторонние библиотеки в vendor файл
+      .pipe(gulp.dest(path.build.html)) //папка назначения
+      .pipe(reload({stream:true})); //Перезагрузка сервера
+  //  }, 1000)
 });
 
 gulp.task('js:build', function() {
@@ -132,8 +138,7 @@ gulp.task('watch', function() {
   watch([path.watch.html], function(event, cb) {
     gulp.start('html:build');
   });
-  watch([path.watch.css, path.watch.scss], function(event, cb) {
-    gulp.start('boot:compile');
+  watch([path.watch.css], function(event, cb) {
     gulp.start('css:build');
   });
   watch([path.watch.js], function(event, cb) {
@@ -145,9 +150,9 @@ gulp.task('watch', function() {
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts:build');
   });
-  // watch([path.watch.scss], function(event, cb) {
-  //   gulp.start('');
-  // });
+  watch([path.watch.scss], function(event, cb) {
+    gulp.start('html:build');
+  });
 });
 
 gulp.task('webserver', function() {
