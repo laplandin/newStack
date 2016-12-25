@@ -1,13 +1,21 @@
 window.onload = function() {
+    var dataDiv = $('.inside');
 
     jQuery.getJSON('index.json', function(data) {
-        renderItems(data);
+        renderIndex(data);
     });
 
-    function renderItems(data) {
-        var source = $('#article-item-template').html();
+    $('.global-nav__item--about').on('click', function() {
+        dataDiv.empty();
+
+        jQuery.getJSON('features.json', function(data) {
+           renderAbout(data);
+        });
+    });
+
+    function renderIndex(data) {
+        var source = $('#index-articles-template').html();
         var template = Handlebars.compile(source);
-        var context = data;
 
         Handlebars.registerHelper('col-width', function(index){
            index += 1;
@@ -18,7 +26,16 @@ window.onload = function() {
             }
         });
 
-        var htmlready = template(context);
-        $('.inside').append(htmlready);
+        var htmlReady = template(data);
+        $('.inside').append(htmlReady);
+    }
+
+    function renderAbout(data) {
+        var source = $('#about-template').html();
+        var template = Handlebars.compile(source);
+        var context = data;
+
+        var htmlReady = template(data);
+        $('.inside').append(htmlReady);
     }
 };

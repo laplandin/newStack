@@ -55,7 +55,7 @@ var path = {
     dist: 'bower_components/bootstrap/dist/css'
   },
   json: {
-    src: 'src/index.json',
+    src: 'src/*.json',
     dest: 'build/'
   }
 };
