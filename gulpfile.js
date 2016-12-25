@@ -53,6 +53,10 @@ var path = {
   bootstrap: {
     src: 'bower_components/bootstrap/scss/bootstrap-custom.scss',
     dist: 'bower_components/bootstrap/dist/css'
+  },
+  json: {
+    src: 'src/index.json',
+    dest: 'build/'
   }
 };
 
@@ -66,13 +70,17 @@ var config = {
   logPrefix: "Frontend_Devil"
 }; //Настройки нашего live-сервера
 
-gulp.task('boot:compile', () => {
-
+gulp.task('boot:compile', function() {
     gulp.src(path.bootstrap.src)
     .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest(path.bootstrap.dist));
     //.pipe(reload({stream:true}));
+});
+
+gulp.task('data:copy', function() {
+  gulp.src(path.json.src)
+      .pipe(gulp.dest(path.json.dest));
 });
 
 gulp.task('html:build', function() {
@@ -126,6 +134,7 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
+  'data:copy',
   'boot:compile',
   'html:build',
   'js:build',
