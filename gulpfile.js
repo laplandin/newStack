@@ -59,6 +59,9 @@ var path = {
   json: {
     src: 'src/*.json',
     dest: 'build/'
+  },
+  bower: {
+    fontAwesome: 'bower_components/components-font-awesome/fonts/*.*'
   }
 };
 
@@ -133,19 +136,23 @@ gulp.task('image:build', function () {
 
 gulp.task('fonts:build', function() {
   gulp.src(path.src.fonts)
-    .pipe(gulp.dest(path.build.fonts))
+    .pipe(gulp.dest(path.build.fonts));
+  gulp.src(path.bower.fontAwesome).
+     pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('build', [
-  'clean',
-  'data:copy',
-  'boot:compile',
-  'html:build',
-  'js:build',
-  'css:build',
-  'fonts:build',
-  'image:build'
-]);
+gulp.task('build', sequence([
+      'clean'
+    ],
+    [
+      'data:copy',
+      'boot:compile',
+      'html:build',
+      'js:build',
+      'css:build',
+      'fonts:build',
+      'image:build'
+]) );
 
 gulp.task('watch', function() {
   watch([path.watch.html], function(event, cb) {
@@ -181,4 +188,4 @@ gulp.task('clean', function(cb) {
 
 gulp.task('develop', ['webserver', 'watch']);
 
-gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('default', sequence(['build'], ['webserver'], 'watch') );
