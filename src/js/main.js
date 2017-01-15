@@ -32,6 +32,8 @@ window.onload = function() {
             case 'main': location.reload();
                 break;
             case 'features': jQuery.getJSON('features.json', function(data) {
+                $('.container.no-padding').removeClass('no-padding');
+                $('.page-header__page-title').hide();
                 renderFeatures(data);
             });
                 break;
@@ -61,7 +63,7 @@ window.onload = function() {
     }
 //Function fro render about content
     function renderFeatures(data) {
-        var source = $('#about-template').html();
+        var source = $('#features-template').html();
         var template = Handlebars.compile(source);
         var context = data;
 

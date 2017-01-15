@@ -1,0 +1,23 @@
+<script id="features-template" type="text/x-handlebars-template">
+    <div class="col-md-12 features">
+        <div class="row">
+            {{#each features}}
+            <div class="col-md-4 features__item">
+                <div class="text-md-center features__icon-wrapper">
+                    <i class="fa fa-{{iconClass}} fa-3x"></i>
+                </div>
+                <h3 class="features__title text-xs-center">{{title}}</h3>
+                <p class="features__text">{{{text}}}</p>
+            </div>
+            {{/each}}
+        </div>
+        <hr>
+        <div class="row features__brand-title">
+            <h3 class="text-uppercase">Торговые бренды</h3>
+        </div>
+        <hr>
+        <div class="row features__brand-wrapper">
+            <img class="img-fluid" src="img/brands-bunner.jpg" alt="">
+        </div>
+    </div>
+</script>
