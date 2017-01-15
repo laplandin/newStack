@@ -12,11 +12,11 @@ window.onload = function() {
            renderAbout(data);
         });
     });
-
+// Function for render index content's items
     function renderIndex(data) {
         var source = $('#index-articles-template').html();
         var template = Handlebars.compile(source);
-
+        //Helpers for set wide-width class for very 5 item, starts from two
         Handlebars.registerHelper('col-width', function(index){
            index += 1;
             if ((index == 2) || ((index - 2) % 5  == 0)) {
@@ -29,7 +29,7 @@ window.onload = function() {
         var htmlReady = template(data);
         $('.inside').append(htmlReady);
     }
-
+//Function fro render about content
     function renderAbout(data) {
         var source = $('#about-template').html();
         var template = Handlebars.compile(source);

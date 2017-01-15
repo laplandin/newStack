@@ -4,17 +4,28 @@
     margin-bottom 32px
 
   #carousel-example-generic
-    height: 500px
+    height: 570px
 
   .page-header__page-title
+    //width 100%
     color: secondary-color
     padding-bottom 20px
-
+    background-color white
+    margin-bottom 30px
+    color main-color
     .button-wrapper
       text-align right
 
+    button:hover
+      background-color secondary-color
+
       @media (min-width: 768px)
         text-align left
+
+  .page-title__description {
+    font-size 18px
+    line-height 24px
+  }
 
   .page-header__index-nav-item
     padding 0
@@ -40,5 +51,5 @@
 
 @media (min-width: 768px)
   .page-header__page-title
-    position absolute
-    top 250px
+    //position absolute
+    //top 250px
