@@ -30,7 +30,8 @@ var path = {
     js: 'build/js/',
     css: 'build/css/',
     img: 'build/img/',
-    fonts: 'build/fonts/'
+    fonts: 'build/fonts/',
+    json: 'build/'
   },
   src: {
     //Откуда брать исходники
@@ -47,7 +48,8 @@ var path = {
     css: 'src/style/**/*.styl',
     scss: 'src/style/**/*.scss',
     img: 'src/img/**/*.*',
-    fonts: 'src/fonts/**/*.*'
+    fonts: 'src/fonts/**/*.*',
+    json: 'src/*.json'
   },
   clean: './build',
   bootstrap: {
@@ -55,7 +57,7 @@ var path = {
     dist: 'bower_components/bootstrap/dist/css'
   },
   json: {
-    src: 'src/index.json',
+    src: 'src/*.json',
     dest: 'build/'
   }
 };
@@ -80,7 +82,8 @@ gulp.task('boot:compile', function() {
 
 gulp.task('data:copy', function() {
   gulp.src(path.json.src)
-      .pipe(gulp.dest(path.json.dest));
+      .pipe(gulp.dest(path.json.dest))
+      .pipe(reload({stream:true}));
 });
 
 gulp.task('html:build', function() {
@@ -134,6 +137,7 @@ gulp.task('fonts:build', function() {
 });
 
 gulp.task('build', [
+  'clean',
   'data:copy',
   'boot:compile',
   'html:build',
@@ -161,6 +165,9 @@ gulp.task('watch', function() {
   });
   watch([path.watch.scss], function(event, cb) {
     gulp.start('html:build');
+  });
+  watch([path.watch.json], function(event, cb) {
+    gulp.start('data:copy');
   });
 });
 

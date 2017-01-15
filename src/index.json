@@ -2,37 +2,37 @@
   "articles":[{
       "title":"Системы видеонаблюдения",
       "description":"Что-то про системы видеонаблюдения",
-      "src":"img/img1"
+      "src":"img/item-images/video-monitoring.jpg"
     },
     {
       "title":"Охранно-пожарная сигнализация",
       "description":"Что-то про охранно-пожарную сигнализацию",
-      "src":"img/img1"
+      "src":"img/item-images/fire-alarm.jpg"
     },
     {
       "title":"Системы управления доступом",
       "description":"Что-то про Системы управления доступом",
-      "src":"img/img1"
+      "src":"img/item-images/access-control-system.jpg"
     },
     {
-      "title":"Автомониторинг",
-      "description":"Что-то про системы видеонаблюдения",
-      "src":"img/img1"
+      "title":"Кабельная продукция",
+      "description":"Что-то про кабельную продукцию",
+      "src":"img/item-images/cable.jpg"
     },
     {
       "title":"Умный дом",
       "description":"Что-то про системы видеонаблюдения",
-      "src":"img/img1"
+      "src":"img/item-images/smart-home.jpg"
     },
     {
       "title":"Серверное и сетевое оборудование",
       "description":"Что-то про сетевое оборудование",
-      "src":"img/img1"
+      "src":"img/item-images/network.jpg"
     },
     {
       "title":"Автоматизация технологических процессов",
       "description":"Что-то про автоматизацию",
-      "src":"img/img1"
+      "src":"img/item-images/automatic-shelf.jpg"
     }
   ]
 }

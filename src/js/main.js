@@ -1,14 +1,22 @@
 window.onload = function() {
+    var dataDiv = $('.inside');
 
     jQuery.getJSON('index.json', function(data) {
-        renderItems(data);
+        renderIndex(data);
     });
 
-    function renderItems(data) {
-        var source = $('#article-item-template').html();
-        var template = Handlebars.compile(source);
-        var context = data;
+    $('.global-nav__item--about').on('click', function() {
+        dataDiv.empty();
 
+        jQuery.getJSON('features.json', function(data) {
+           renderAbout(data);
+        });
+    });
+// Function for render index content's items
+    function renderIndex(data) {
+        var source = $('#index-articles-template').html();
+        var template = Handlebars.compile(source);
+        //Helpers for set wide-width class for very 5 item, starts from two
         Handlebars.registerHelper('col-width', function(index){
            index += 1;
             if ((index == 2) || ((index - 2) % 5  == 0)) {
@@ -18,7 +26,16 @@ window.onload = function() {
             }
         });
 
-        var htmlready = template(context);
-        $('.inside').append(htmlready);
+        var htmlReady = template(data);
+        $('.inside').append(htmlReady);
+    }
+//Function fro render about content
+    function renderAbout(data) {
+        var source = $('#about-template').html();
+        var template = Handlebars.compile(source);
+        var context = data;
+
+        var htmlReady = template(data);
+        $('.inside').append(htmlReady);
     }
 };
