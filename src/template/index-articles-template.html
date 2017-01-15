@@ -1,10 +1,15 @@
 <script id="index-articles-template" type="text/x-handlebars-template">
     {{#each articles}}
-    <div class="col-lg-{{col-width @index}}">
-        <article class="card align-items-start">
-            <img class="card-img-top" src="{{src}}" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">{{title}}</h4>
+    <div class="col-md-{{col-width @index}} article">
+        <article class="card align-items-start article__card">
+            <picture>
+                <source media="(min-width:1170px)" srcset="{{src}}">
+                <source media="(min-width:768px)" srcset="{{srcTablet}}">
+                <img class="img-fluid card-img-top article__img" src="{{srcMobile}}" alt="{{description}}">
+            </picture>
+            <!--<img class="card-img-top article__img" src="{{src}}" alt="{{description}}">-->
+            <div class="article__block">
+                <h4 class="card-title text-md-center">{{title}}</h4>
                 <!--<p class="card-text">{{description}}</p>-->
                 <!--<a href="#" class="btn btn-primary">Подробнее</a>-->
             </div>

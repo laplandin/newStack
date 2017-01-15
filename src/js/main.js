@@ -1,7 +1,9 @@
 window.onload = function() {
     var dataDiv = $('.inside');
+    var jsonData;
 
     jQuery.getJSON('index.json', function(data) {
+        jsonData = data;
         renderIndex(data);
     });
 
@@ -31,11 +33,10 @@ window.onload = function() {
         switch(renderTitle) {
             case 'main': location.reload();
                 break;
-            case 'features': jQuery.getJSON('features.json', function(data) {
+            case 'features':
                 $('.container.no-padding').removeClass('no-padding');
                 $('.page-header__page-title').hide();
-                renderFeatures(data);
-            });
+                renderFeatures(jsonData);
                 break;
             case 'contacts': window.open('kb-ug.ru/contacts', '_self');
                 break;
@@ -52,9 +53,9 @@ window.onload = function() {
         Handlebars.registerHelper('col-width', function(index){
            index += 1;
             if ((index == 2) || ((index - 2) % 5  == 0)) {
-                return "8";
+                return "8 article__card--wide";
             } else {
-                return "4";
+                return "4 article__card--normal";
             }
         });
 

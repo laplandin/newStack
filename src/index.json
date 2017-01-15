@@ -2,37 +2,68 @@
   "articles":[{
       "title":"Системы видеонаблюдения",
       "description":"Что-то про системы видеонаблюдения",
-      "src":"img/item-images/video-monitoring.jpg"
+      "src":"img/item-images/video-monitoring.jpg",
+      "srcTablet":"img/item-images/tablet/video-monitoring.jpg",
+      "srcMobile":"img/item-images/mobile/video-monitoring.jpg"
     },
     {
       "title":"Охранно-пожарные сигнализации",
       "description":"Что-то про охранно-пожарную сигнализацию",
-      "src":"img/item-images/fire-alarm.jpg"
+      "src":"img/item-images/fire-alarm.jpg",
+      "srcTablet":"img/item-images/tablet/fire-alarm.jpg",
+      "srcMobile":"img/item-images/mobile/fire-alarm.jpg"
     },
     {
       "title":"Системы управления доступом",
       "description":"Что-то про Системы управления доступом",
-      "src":"img/item-images/access-control-system.jpg"
+      "src":"img/item-images/access-control-system.jpg",
+      "srcTablet":"img/item-images/tablet/access-control-system.jpg",
+      "srcMobile":"img/item-images/mobile/access-control-system.jpg"
     },
     {
       "title":"Кабельная продукция",
       "description":"Что-то про кабельную продукцию",
-      "src":"img/item-images/cable.jpg"
+      "src":"img/item-images/cable.jpg",
+      "srcTablet":"img/item-images/tablet/cable.jpg",
+      "srcMobile":"img/item-images/mobile/cable.jpg"
     },
     {
       "title":"Умный дом",
       "description":"Что-то про системы видеонаблюдения",
-      "src":"img/item-images/smart-home.jpg"
+      "src":"img/item-images/smart-home.jpg",
+      "srcTablet":"img/item-images/tablet/smart-home.jpg",
+      "srcMobile":"img/item-images/mobile/smart-home.jpg"
     },
     {
       "title":"Серверное и сетевое оборудование",
       "description":"Что-то про сетевое оборудование",
-      "src":"img/item-images/network.jpg"
+      "src":"img/item-images/network.jpg",
+      "srcTablet":"img/item-images/tablet/network.jpg",
+      "srcMobile":"img/item-images/mobile/network.jpg"
     },
     {
       "title":"Автоматизация технологических процессов",
       "description":"Что-то про автоматизацию",
-      "src":"img/item-images/automatic-shelf.jpg"
+      "src":"img/item-images/automatic-shelf.jpg",
+      "srcTablet":"img/item-images/tablet/automatic-shelf.jpg",
+      "srcMobile":"img/item-images/mobile/automatic-shelf.jpg"
+    }
+  ],
+  "features": [
+    {
+      "title": "Технологичность",
+      "iconClass": "cogs",
+      "text": "Мы&nbsp;предлагаем оборудование, отвечающее стандартам современности. Функциональность, простота использования и&nbsp;обилие возможностей неизменны, а&nbsp;широкий модельный ряд позволит не&nbsp;ограничивать себя в&nbsp;выборе. Возможно усовершенствование уже существующей системы безопасности, либо расширение ее&nbsp;возможностей."
+    },
+    {
+      "title": "Комплексность",
+      "iconClass": "database",
+      "text": "Мы&nbsp;предлагаем широкий спектр услуг: от&nbsp;продажи до&nbsp;монтажа и&nbsp;пусконаладочных работ. Наши специалисты предложат проект, подберут соответствующее задачам оборудование, предусмотрят такие возможности, как перспективное расширение, либо наращивание функциональности. Реализованный проект будет расти вместе с&nbsp;вашими потребностями. Мы&nbsp;готовы предложить ассортимент реализаций возможного исполнения на&nbsp;базе разных производителей таким образом, чтобы проект максимально эффективно решал возложенные на&nbsp;него задачи."
+    },
+    {
+      "title": "Качество",
+      "iconClass": "line-chart",
+      "text": "Мы&nbsp;работаем с&nbsp;официальными поставщиками и&nbsp;дистрибьюторами оборудования и&nbsp;несем ответственность за&nbsp;качество предлагаемой продукции. Ниже вы&nbsp;можете ознакомиться с&nbsp;вендорами, которые мы&nbsp;предлагаем вашему вниманию. Возможно комбинирование продукции разных производителей для построения более гибкой инфраструктуры в&nbsp;целях объединения вместе необходимого объема функциональных возможностей."
     }
   ]
 }
