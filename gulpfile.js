@@ -36,7 +36,7 @@ var path = {
   src: {
     //Откуда брать исходники
     html: 'src/*.html',
-    js: 'src/js/main.js',
+    js: 'src/js/*.js',
     css: 'src/style/main.styl',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*'

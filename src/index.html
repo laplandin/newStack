@@ -19,51 +19,69 @@
         //= template/nav.html
         //= template/header.html
     </div>
-
+    <a name="catalog" id="catalog"></a>
     <div class="container no-padding">
         <div class="row row-eq-height inside"></div>
     </div>
+    <a name="features" id="features"></a>
     <div class="container">
         <div class="inside-features"></div>
     </div>
+    <a name="about" id="about"></a>
+    <div class="container">
+        <div class="row about__title section-title">
+            <h3 class="text-uppercase">О нас</h3>
+        </div>
+        <div class="row inside-about">
+            <p class="lead bold">Молодая, динамично развивающаяся компания Ростова-на-Дону по&nbsp;внедрению высокотехнологичных
+                систем: начиная от&nbsp;пожарной сигнализации и&nbsp;заканчивая умным домом. Мы&nbsp;можем сделать ваш
+                бизнес безопаснее и&nbsp;современнее. Автоматизация процессов, установка сетевого оборудования, датчиков,
+                камер&nbsp;&mdash; вот лишь небольшой спектр наших услуг. Подробнейшая документация поможет впоследствии
+                без особого труда поддерживать созданные системы самостоятельно.
+            </p>
+            <p class="lead">
+                Штат компетентных инженеров и&nbsp;техников решат любую поставленную заказчиком задачу. У&nbsp;команды
+                есть большой опыт реализации проектов для нужд государственных и&nbsp;частных лиц, полученный при ведении
+                работы в&nbsp;центральных регионах страны. В&nbsp;настоящее время динамический рост направлен в&nbsp;первую
+                очередь на&nbsp;Южный Федеральный округ и&nbsp;г. Ростов-на-Дону в&nbsp;частности, что послужило основой
+                решения основать здесь головной офис, тем не&nbsp;менее сотрудничество с&nbsp;центральными регионами будет
+                продолжено.
+            </p>
+            <p class="lead">Нашим определяющим вектором развития является технологичность и&nbsp;надежность реализуемых систем.
+                Ответственность за&nbsp;качество работы, гарантия, возможность легкой поддержки и&nbsp;обслуживания.
+                В&nbsp;краткосрочной перспективе будет реализована система онлайн-продаж для повышения комфорта наших
+                клиентов.
+            </p>
+        </div>
+    </div>
+    <a name="contacts" id="contacts"></a>
     <div class="container">
         <div class="row features__title section-title">
             <h3 class="text-uppercase">Контакты</h3>
         </div>
-        <div class="row">
-            <div class="contact-item contact-item--address">
+        <div class="row contacts">
+            <div class="contact-item contact-item--address col-md-6">
                 <p><i class="fa fa-map-marker fa-lg"></i>344000 Российская Федерация<br>
                     Ростов-на-Дону, ул.Малиновского 54 Б,<br>
                     офис 5
                 </p>
             </div>
-            <hr>
-            <div class="contact-item contact-item--call">
+            <div class="contact-item contact-item--call col-md-6">
                 <a class="d-block" href="tel:+78632491794"><i class="fa fa-phone fa-lg"></i>+7 (863) 249-17-94</a>
                 <!--<a class="d-block" href="tel:+79500000000"><i class="fa fa-mobile fa-lg"></i>+7 950 000-00-00</a>-->
-            </div>
-            <div class="contact-item contact-item--e-mail">
                 <a href="mailto:hello@fitnes-club.ru"><i class="fa fa-envelope"></i>hello@fitnes-club.ru</a>
             </div>
-            <div class="col-sm-6"></div>
         </div>
         <div class="row">
             <div id="map"></div>
         </div>
     </div>
-
-    <div class="row inside-about"></div>
-
-
-
-
     //= template/footer.html
-
-
-
     //= template/index-articles-template.html
     //= template/features-template.html
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=gzC8EZVgFQfEr3tXx-QsYdBoezUsK6o5&amp;width=1140&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true&id=map"></script>
+    <script type="text/javascript" src="js/smooth-scroll.js"></script>
+    <script>smoothScroll.init();</script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=gzC8EZVgFQfEr3tXx-QsYdBoezUsK6o5&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true&id=map"></script>
 </body>
 </html>
