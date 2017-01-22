@@ -1,6 +1,8 @@
 <script id="features-template" type="text/x-handlebars-template">
-    <div class="col-md-12 features">
-        <div class="row">
+    <div class="row features__title section-title">
+        <h3 class="text-uppercase">Почему именно мы</h3>
+    </div>
+    <div class="row features__list">
             {{#each features}}
             <div class="col-md-4 features__item">
                 <div class="text-xs-center features__icon-wrapper">
@@ -10,14 +12,11 @@
                 <p class="features__text">{{{text}}}</p>
             </div>
             {{/each}}
-        </div>
-        <hr>
-        <div class="row features__brand-title">
-            <h3 class="text-uppercase">Торговые бренды</h3>
-        </div>
-        <hr>
-        <div class="row features__brand-wrapper">
-            <img class="img-fluid" src="img/brands-bunner.jpg" alt="">
-        </div>
+    </div>
+    <div class="row features__brand-title section-title">
+        <h3 class="text-uppercase">Торговые бренды</h3>
+    </div>
+    <div class="row features__brand-wrapper">
+        <img class="img-fluid" src="img/brands-bunner.jpg" alt="">
     </div>
 </script>
