@@ -26,11 +26,33 @@
     <div class="container">
         <div class="inside-features"></div>
     </div>
-
-    <div class="row row-eq-height inside-contacts">
-
+    <div class="container">
+        <div class="row features__title section-title">
+            <h3 class="text-uppercase">Контакты</h3>
+        </div>
+        <div class="row">
+            <div class="contact-item contact-item--address">
+                <p><i class="fa fa-map-marker fa-lg"></i>344000 Российская Федерация<br>
+                    Ростов-на-Дону, ул.Малиновского 54 Б,<br>
+                    офис 5
+                </p>
+            </div>
+            <hr>
+            <div class="contact-item contact-item--call">
+                <a class="d-block" href="tel:+78632491794"><i class="fa fa-phone fa-lg"></i>+7 (863) 249-17-94</a>
+                <!--<a class="d-block" href="tel:+79500000000"><i class="fa fa-mobile fa-lg"></i>+7 950 000-00-00</a>-->
+            </div>
+            <div class="contact-item contact-item--e-mail">
+                <a href="mailto:hello@fitnes-club.ru"><i class="fa fa-envelope"></i>hello@fitnes-club.ru</a>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+        <div class="row">
+            <div id="map"></div>
+        </div>
     </div>
-    <div class="row row-eq-height inside-about"></div>
+
+    <div class="row inside-about"></div>
 
 
 
@@ -42,5 +64,6 @@
     //= template/index-articles-template.html
     //= template/features-template.html
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=gzC8EZVgFQfEr3tXx-QsYdBoezUsK6o5&amp;width=1140&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true&id=map"></script>
 </body>
 </html>
